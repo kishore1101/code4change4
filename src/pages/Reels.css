@@ -1,0 +1,34 @@
+.reels-page {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.reels-container {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.reels-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner look */
+}
+
+/* Ensure each reel takes full viewport height */
+.reels-container > * {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reels-page {
+    height: calc(100vh - 60px);
+  }
+  
+  .reels-container > * {
+    height: calc(100vh - 60px);
+  }
+}

@@ -1,0 +1,172 @@
+.ad-card {
+  background-color: #121212;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #262626;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(245, 87, 108, 0.2);
+}
+
+.ad-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.ad-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.ad-card:hover .ad-media img {
+  transform: scale(1.05);
+}
+
+.ai-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.ad-content {
+  padding: 16px;
+}
+
+.ad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scam-risk {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.ad-text {
+  font-size: 14px;
+  color: #f0f0f0;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.ad-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #262626;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress-fill.risk-high {
+  background: linear-gradient(90deg, #ff4444, #ff6b6b);
+}
+
+.progress-fill.risk-medium {
+  background: linear-gradient(90deg, #ffc107, #ffd54f);
+}
+
+.progress-fill.risk-low {
+  background: linear-gradient(90deg, #00ff00, #69f0ae);
+}
+
+.ad-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #262626;
+}
+
+.authenticity-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+}
+
+.report-btn {
+  background: none;
+  border: 1px solid #f5576c;
+  color: #f5576c;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.report-btn:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ad-card {
+    border-radius: 12px;
+  }
+  
+  .ad-content {
+    padding: 12px;
+  }
+  
+  .brand-name {
+    font-size: 14px;
+  }
+  
+  .ad-text {
+    font-size: 12px;
+  }
+}

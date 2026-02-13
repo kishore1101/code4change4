@@ -1,0 +1,243 @@
+.stories-wrapper {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px 16px;
+  margin-bottom: 24px;
+  border: 1px solid #dbdbdb;
+  overflow-x: auto; /* This enables horizontal scrolling */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  width: 100%;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Hide scrollbar but keep functionality (optional) */
+.stories-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.stories-wrapper::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.stories-wrapper::-webkit-scrollbar-thumb {
+  background: #0095f6;
+  border-radius: 4px;
+}
+
+.stories-wrapper::before,
+.stories-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.stories-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, #ffffff, transparent);
+}
+
+.stories-wrapper::after {
+  right: 0;
+  background: linear-gradient(-90deg, #ffffff, transparent);
+}
+
+.stories-container {
+  display: flex;
+  gap: 20px;
+  padding: 4px 0;
+}
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
+  flex-shrink: 0; /* Prevents items from shrinking */
+}
+
+.story-item:hover {
+  transform: translateY(-2px);
+}
+
+.story-avatar-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.story-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  padding: 2px;
+}
+
+.story-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+
+/* Removed AI badge styles */
+
+.story-username {
+  font-size: 12px;
+  max-width: 74px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 2px;
+}
+
+.username-text {
+  color: #262626;
+  font-weight: 500;
+}
+
+.ai-indicator {
+  font-size: 10px;
+  filter: drop-shadow(0 2px 2px rgba(0, 149, 246, 0.3));
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulse animation for AI stories */
+.ai-story .story-ring {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive for tablet */
+@media (max-width: 1260px) {
+  .stories-wrapper {
+    padding: 18px 14px;
+  }
+  
+  .story-avatar-wrapper {
+    width: 68px;
+    height: 68px;
+  }
+  
+  .story-avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .stories-wrapper {
+    padding: 16px 12px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+  }
+  
+  .stories-wrapper::before,
+  .stories-wrapper::after {
+    width: 20px;
+  }
+  
+  .story-avatar-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .story-avatar {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .story-ring {
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+  }
+  
+  .story-username {
+    font-size: 11px;
+    max-width: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stories-wrapper {
+    padding: 14px 10px;
+  }
+  
+  .stories-container {
+    gap: 15px;
+  }
+  
+  .story-avatar-wrapper {
+    width: 58px;
+    height: 58px;
+  }
+  
+  .story-avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .story-username {
+    font-size: 10px;
+    max-width: 58px;
+  }
+}
