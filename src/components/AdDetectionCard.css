@@ -1,172 +1,74 @@
-.ad-card {
-  background-color: #121212;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #262626;
-  transition: transform 0.3s, box-shadow 0.3s;
+/* src/components/AdDetectionCard.css - Add new styles */
+.signals-section {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff3cd;
+  border-radius: 8px;
+  border-left: 3px solid #ff9800;
 }
 
-.ad-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(245, 87, 108, 0.2);
+.signals-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #856404;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.ad-media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  overflow: hidden;
+.signals-list {
+  margin: 0;
+  padding-left: 15px;
+  font-size: 10px;
+  color: #856404;
 }
 
-.ad-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
+.signals-list li {
+  margin-bottom: 2px;
 }
 
-.ad-card:hover .ad-media img {
+.gemini-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 8px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 8px;
+  font-size: 11px;
+  color: #0d47a1;
+}
+
+.gemini-icon {
+  font-size: 14px;
+}
+
+.analyze-btn {
+  background: linear-gradient(135deg, #0095f6 0%, #00c6ff 100%);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.analyze-btn:hover:not(:disabled) {
   transform: scale(1.05);
 }
 
-.ai-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 600;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  z-index: 2;
+.analyze-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.ad-content {
-  padding: 16px;
+.authenticity-badge.verified {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
 }
 
-.ad-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.brand-name {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.scam-risk {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 12px;
-}
-
-.ad-text {
-  font-size: 14px;
-  color: #f0f0f0;
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
-
-.ad-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.stat-label {
-  font-size: 12px;
-  color: #8e8e8e;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 4px;
-  background-color: #262626;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  transition: width 0.3s ease;
-}
-
-.progress-fill.risk-high {
-  background: linear-gradient(90deg, #ff4444, #ff6b6b);
-}
-
-.progress-fill.risk-medium {
-  background: linear-gradient(90deg, #ffc107, #ffd54f);
-}
-
-.progress-fill.risk-low {
-  background: linear-gradient(90deg, #00ff00, #69f0ae);
-}
-
-.ad-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 12px;
-  border-top: 1px solid #262626;
-}
-
-.authenticity-badge {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 12px;
-  background-color: #1e1e1e;
-}
-
-.report-btn {
-  background: none;
-  border: 1px solid #f5576c;
-  color: #f5576c;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.report-btn:hover {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
-  border-color: transparent;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .ad-card {
-    border-radius: 12px;
-  }
-  
-  .ad-content {
-    padding: 12px;
-  }
-  
-  .brand-name {
-    font-size: 14px;
-  }
-  
-  .ad-text {
-    font-size: 12px;
-  }
+.authenticity-badge.suspicious {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
 }

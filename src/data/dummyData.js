@@ -7,12 +7,8 @@ export const dummyPosts = [
     caption: 'Living in a digital world 🌟 #AI #Future',
     likes: 1234,
     comments: 89,
-    timestamp: '2 hours ago',
-    isAI: true,
-    aiScore: 89,
-    amplificationRisk: 72,
-    deepfakeRisk: 'High',
-    botScore: 65
+    timestamp: '2 hours ago'
+    // Removed manual AI scores
   },
   {
     id: 2,
@@ -22,12 +18,8 @@ export const dummyPosts = [
     caption: 'Beautiful sunset today! 🌅',
     likes: 567,
     comments: 23,
-    timestamp: '5 hours ago',
-    isAI: false,
-    aiScore: 12,
-    amplificationRisk: 18,
-    deepfakeRisk: 'Low',
-    botScore: 8
+    timestamp: '5 hours ago'
+    // Removed manual AI scores
   },
   {
     id: 3,
@@ -37,43 +29,112 @@ export const dummyPosts = [
     caption: 'Breaking: New AI detection tool released 🚀',
     likes: 2341,
     comments: 156,
-    timestamp: '8 hours ago',
-    isAI: false,
-    aiScore: 23,
-    amplificationRisk: 45,
-    deepfakeRisk: 'Medium',
-    botScore: 34
+    timestamp: '8 hours ago'
+    // Removed manual AI scores
   }
 ];
 
 export const dummyReels = [
   {
     id: 1,
-    username: 'video_creator_1',
+    username: 'video_1',
     avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop',
     video_url: '/WhatsApp Video 2026-02-13 at 11.30.26 PM.mp4',
-    caption: 'First WhatsApp video 🎥 #viral #trending',
-    likes: '12.5K',
-    comments: '456',
-    isAI: true,
-    ai_score: 76,
-    amplification_score: 68,
-    deepfake_risk: 'Medium',
-    bot_score: 45
+    caption: 'First WhatsApp video 🎥',
+    likes: '45.2K',
+    comments: '1.2K'
+    // Removed manual AI scores
   },
   {
     id: 2,
-    username: 'video_creator_2',
+    username: 'video_2',
     avatar: 'https://images.unsplash.com/photo-1494790108777-847ef5c6c6e5?w=40&h=40&fit=crop',
+    video_url: '/WhatsApp Video 2026-02-13 at 11.33.52 PM.mp4',
+    caption: 'Second WhatsApp video 📱',
+    likes: '2',
+    comments: '0'
+    // Removed manual AI scores
+  },
+  {
+    id: 3,
+    username: 'video_3',
+    avatar: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=40&h=40&fit=crop',
+    video_url: '/WhatsApp Video 2026-02-13 at 11.33.52 PM.mp4',
+
+    caption: 'Third WhatsApp video 🎬',
+    likes: '1',
+    comments: '4'
+    // Removed manual AI scores
+  },
+  {
+    id: 4,
+    username: 'video_4',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop',
+    video_url: '\WhatsApp Video 2026-02-14 at 9.25.15 AM.mp4',
+    caption: 'Dance video 🕺',
+    likes: '67.8K',
+    comments: '3.4K'
+    // Removed manual AI scores
+  },
+  {
+    id: 5,
+    username: 'video_5',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop',
     video_url: '\WhatsApp Video 2026-02-14 at 12.41.07 AM.mp4',
-    caption: 'Second WhatsApp video 📱 #fun #entertainment',
-    likes: '8.2K',
-    comments: '234',
-    isAI: true,
-    ai_score: 82,
-    amplification_score: 71,
-    deepfake_risk: 'High',
-    bot_score: 58
+    caption: 'Celebrity video 🎭',
+    likes: '89.3K',
+    comments: '5.6K'
+    // Removed manual AI scores
+  },
+  {
+    id: 6,
+    username: 'video_6',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop',
+    video_url:'\WhatsApp Video 2026-02-14 at 9.21.06 AM.mp4',
+    caption: 'Cooking video 🍝',
+    likes: '34.2K',
+    comments: '1.1K'
+    // Removed manual AI scores
+  },
+  {
+    id: 7,
+    username: 'video_7',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=40&h=40&fit=crop',
+    video_url: '\WhatsApp Video 2026-02-14 at 8.00.08 AM.mp4',
+    caption: 'Anime video 🎌',
+    likes: '56.7K',
+    comments: '2.8K'
+    // Removed manual AI scores
+  },
+  {
+    id: 8,
+    username: 'video_8',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop',
+    video_url: '\WhatsApp Video 2026-02-13 at 11.30.26 PM.mp4',
+    caption: 'Fitness video 💪',
+    likes: '42.1K',
+    comments: '1.8K'
+    // Removed manual AI scores
+  },
+  {
+    id: 9,
+    username: 'video_9',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=40&h=40&fit=crop',
+    video_url: '\WhatsApp Video 2026-02-14 at 9.25.15 AM.mp4',
+    caption: 'Business tips 💼',
+    likes: '28.9K',
+    comments: '967'
+    // Removed manual AI scores
+  },
+  {
+    id: 10,
+    username: 'video_10',
+    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=40&h=40&fit=crop',
+    video_url: '',
+    caption: '',
+    likes: '20',
+    comments: '3'
+    // Removed manual AI scores
   }
 ];
 
@@ -82,54 +143,42 @@ export const dummyAds = [
     id: 1,
     brand_name: 'LuxuryWatch',
     ad_media: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=300&h=300&fit=crop',
-    ad_text: 'Get 90% off on luxury watches! Limited time offer! 🚀',
-    ai_probability: 89,
-    scam_risk: 92,
-    authenticity: 'suspicious'
+    ad_text: 'Get 90% off on luxury watches! Limited time offer! 🚀'
+    // Removed manual AI scores
   },
   {
     id: 2,
     brand_name: 'OrganicHair',
     ad_media: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=300&h=300&fit=crop',
-    ad_text: 'Natural hair oil - 100% organic results in 7 days!',
-    ai_probability: 76,
-    scam_risk: 68,
-    authenticity: 'suspicious'
+    ad_text: 'Natural hair oil - 100% organic results in 7 days!'
+    // Removed manual AI scores
   },
   {
     id: 3,
     brand_name: 'CryptoKing',
     ad_media: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=300&h=300&fit=crop',
-    ad_text: 'Invest $100 get $1000 back in 24 hours! Guaranteed!',
-    ai_probability: 95,
-    scam_risk: 98,
-    authenticity: 'suspicious'
+    ad_text: 'Invest $100 get $1000 back in 24 hours! Guaranteed!'
+    // Removed manual AI scores
   },
   {
     id: 4,
     brand_name: 'FashionHub',
     ad_media: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=300&fit=crop',
-    ad_text: 'Summer collection 2024 - Verified store ✅',
-    ai_probability: 23,
-    scam_risk: 18,
-    authenticity: 'verified'
+    ad_text: 'Summer collection 2024 - Verified store ✅'
+    // Removed manual AI scores
   },
   {
     id: 5,
     brand_name: 'FitLife',
     ad_media: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=300&fit=crop',
-    ad_text: 'Fitness program - Real trainers, real results',
-    ai_probability: 34,
-    scam_risk: 28,
-    authenticity: 'verified'
+    ad_text: 'Fitness program - Real trainers, real results'
+    // Removed manual AI scores
   },
   {
     id: 6,
     brand_name: 'QuickMoney',
     ad_media: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=300&fit=crop',
-    ad_text: 'Work from home - Earn $5000/week! No experience!',
-    ai_probability: 92,
-    scam_risk: 95,
-    authenticity: 'suspicious'
+    ad_text: 'Work from home - Earn $5000/week! No experience!'
+    // Removed manual AI scores
   }
 ];

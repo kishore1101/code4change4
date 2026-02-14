@@ -1,6 +1,8 @@
+// src/components/ReelPlayer.js
 import React, { useRef, useEffect, useState } from 'react';
 import { FaHeart, FaComment, FaShare, FaBookmark, FaPlay } from 'react-icons/fa';
 import AIScoreCard from './AIScoreCard';
+import api from '../services/api';
 import './ReelPlayer.css';
 
 const ReelPlayer = ({ reel, isActive }) => {
@@ -10,48 +12,20 @@ const ReelPlayer = ({ reel, isActive }) => {
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
   const [videoError, setVideoError] = useState(false);
-  const [videoAspectRatio, setVideoAspectRatio] = useState('portrait');
+  const [analysis, setAnalysis] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (isActive && videoRef.current && !videoError) {
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(error => {
-            console.log('Video playback error:', error);
-            setIsPlaying(false);
-          });
-      }
+      videoRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
     } else if (videoRef.current) {
       videoRef.current.pause();
       setIsPlaying(false);
     }
   }, [isActive, videoError]);
-
-  useEffect(() => {
-    // Check video aspect ratio when metadata is loaded
-    const video = videoRef.current;
-    if (video) {
-      const handleLoadedMetadata = () => {
-        const ratio = video.videoWidth / video.videoHeight;
-        if (ratio > 1) {
-          setVideoAspectRatio('landscape');
-        } else if (ratio < 1) {
-          setVideoAspectRatio('portrait');
-        } else {
-          setVideoAspectRatio('square');
-        }
-      };
-      
-      video.addEventListener('loadedmetadata', handleLoadedMetadata);
-      return () => {
-        video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      };
-    }
-  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -59,27 +33,37 @@ const ReelPlayer = ({ reel, isActive }) => {
         videoRef.current.pause();
         setIsPlaying(false);
       } else {
-        const playPromise = videoRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              setIsPlaying(true);
-            })
-            .catch(error => {
-              console.log('Video playback error:', error);
-              setVideoError(true);
-            });
-        }
+        videoRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(() => setVideoError(true));
       }
     }
   };
 
-  const handleVideoError = (e) => {
-    console.log('Video failed to load:', reel.video_url, e);
+  const handleVideoError = () => {
     setVideoError(true);
   };
 
-  const toggleAIScore = () => {
+  const analyzeVideo = async () => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      console.log(`🔍 Analyzing video ${reel.id} with backend...`);
+      const result = await api.analyzeReel(reel);
+      setAnalysis(result);
+    } catch (err) {
+      console.error('Analysis failed:', err);
+      setError('Failed to analyze video');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const toggleAIScore = async () => {
+    if (!showAIScore && !analysis) {
+      await analyzeVideo();
+    }
     setShowAIScore(!showAIScore);
   };
 
@@ -92,20 +76,15 @@ const ReelPlayer = ({ reel, isActive }) => {
           loop
           playsInline
           onClick={togglePlay}
-          className={`reel-video ${videoAspectRatio}`}
+          className="reel-video"
           onError={handleVideoError}
-          preload="auto"
         />
       ) : (
         <div className="video-error-placeholder">
           <div className="error-content">
             <span className="error-icon">🎥</span>
             <p>Video failed to load</p>
-            <small>{reel.video_url}</small>
-            <button 
-              className="retry-btn"
-              onClick={() => setVideoError(false)}
-            >
+            <button className="retry-btn" onClick={() => setVideoError(false)}>
               Retry
             </button>
           </div>
@@ -120,7 +99,7 @@ const ReelPlayer = ({ reel, isActive }) => {
 
       <div className="reel-overlay">
         <div className="reel-user-info">
-          <div className={`user-avatar ${reel.isAI ? 'ai-avatar' : ''}`}>
+          <div className="user-avatar">
             <img src={reel.avatar} alt={reel.username} />
           </div>
           <div className="user-details">
@@ -162,16 +141,34 @@ const ReelPlayer = ({ reel, isActive }) => {
 
       {showAIScore && (
         <div className="reel-ai-overlay">
-          <AIScoreCard 
-            aiScore={reel.ai_score}
-            amplificationRisk={reel.amplification_score}
-            deepfakeRisk={reel.deepfake_risk}
-            botScore={reel.bot_score}
-          />
-          <button 
-            className="close-ai-btn"
-            onClick={toggleAIScore}
-          >
+          {loading ? (
+            <div className="loading-container">
+              <div className="loading-spinner"></div>
+              <p>Analyzing video patterns...</p>
+              <small>Checking 6 behavioral signals</small>
+            </div>
+          ) : error ? (
+            <div className="error-container">
+              <p>❌ {error}</p>
+              <button onClick={analyzeVideo} className="retry-btn">
+                Retry Analysis
+              </button>
+            </div>
+          ) : (
+            <AIScoreCard 
+              aiScore={analysis?.confidence || 0}
+              amplificationRisk={analysis?.amplification_score || 0}
+              deepfakeRisk={analysis?.deepfake_risk || 'Unknown'}
+              botScore={analysis?.bot_score || 0}
+              signals={analysis?.triggered_signals}
+              confidence={analysis?.confidence}
+              label={analysis?.label}
+              tapDetail={analysis?.tap_detail}
+              geminiInsights={analysis?.gemini_insights}
+              abnormalCount={analysis?.abnormal_signal_count}
+            />
+          )}
+          <button className="close-ai-btn" onClick={toggleAIScore}>
             ✕
           </button>
         </div>

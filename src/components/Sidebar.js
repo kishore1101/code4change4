@@ -57,19 +57,6 @@ const Sidebar = () => {
         </NavLink>
       </nav>
       
-      <div className="sidebar-footer">
-        <div className="ai-summary">
-          <div className="ai-summary-item">
-            <span className="label">AI Media</span>
-            <span className="value risk-high">34%</span>
-          </div>
-          <div className="ai-summary-item">
-            <span className="label">Fake Ads</span>
-            <span className="value risk-medium">12</span>
-          </div>
-        </div>
-      </div>
-      
       {/* Bottom Navigation for Mobile */}
       <div className="bottom-nav">
         <NavLink to="/" className="bottom-nav-item">

@@ -4,12 +4,23 @@ import { dummyAds } from '../data/dummyData';
 import './AdsDetector.css';
 
 const AdsDetector = () => {
-  const stats = {
-    totalAds: dummyAds.length,
-    highRisk: dummyAds.filter(ad => ad.ai_probability >= 70).length,
-    mediumRisk: dummyAds.filter(ad => ad.ai_probability >= 40 && ad.ai_probability < 70).length,
-    lowRisk: dummyAds.filter(ad => ad.ai_probability < 40).length
-  };
+  // Calculate stats safely
+  const totalAds = dummyAds?.length || 0;
+  
+  const highRisk = dummyAds?.filter(ad => {
+    const score = ad.ai_probability || ad.aiProbability || 0;
+    return score >= 70;
+  }).length || 0;
+  
+  const mediumRisk = dummyAds?.filter(ad => {
+    const score = ad.ai_probability || ad.aiProbability || 0;
+    return score >= 40 && score < 70;
+  }).length || 0;
+  
+  const lowRisk = dummyAds?.filter(ad => {
+    const score = ad.ai_probability || ad.aiProbability || 0;
+    return score < 40;
+  }).length || 0;
 
   return (
     <div className="ads-detector-page">
@@ -20,27 +31,31 @@ const AdsDetector = () => {
 
       <div className="stats-grid">
         <div className="stat-card">
-          <span className="stat-number">{stats.totalAds}</span>
+          <span className="stat-number">{totalAds}</span>
           <span className="stat-label">Total Ads</span>
         </div>
         <div className="stat-card risk-high">
-          <span className="stat-number">{stats.highRisk}</span>
+          <span className="stat-number">{highRisk}</span>
           <span className="stat-label">High Risk</span>
         </div>
         <div className="stat-card risk-medium">
-          <span className="stat-number">{stats.mediumRisk}</span>
+          <span className="stat-number">{mediumRisk}</span>
           <span className="stat-label">Medium Risk</span>
         </div>
         <div className="stat-card risk-low">
-          <span className="stat-number">{stats.lowRisk}</span>
+          <span className="stat-number">{lowRisk}</span>
           <span className="stat-label">Low Risk</span>
         </div>
       </div>
 
       <div className="ads-grid">
-        {dummyAds.map((ad) => (
-          <AdDetectionCard key={ad.id} ad={ad} />
-        ))}
+        {dummyAds && dummyAds.length > 0 ? (
+          dummyAds.map((ad) => (
+            <AdDetectionCard key={ad.id} ad={ad} />
+          ))
+        ) : (
+          <div className="no-ads">No advertisements to display</div>
+        )}
       </div>
     </div>
   );
