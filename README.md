@@ -1,70 +1,194 @@
-# Getting Started with Create React App
+.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🎭 Instagram AI Deepfake Detector 🔍
+Hackathon Submission Project
 
-## Available Scripts
+A full-stack AI system that detects deepfake videos, AI-generated media, and coordinated bot amplification campaigns on social media using behavioral analytics and machine learning.
 
-In the project directory, you can run:
+🧩 Problem Statement
 
-### `npm start`
+Social media platforms face a rapid rise in:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+AI-generated deepfake videos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Synthetic influencer content
 
-### `npm test`
+Coordinated bot amplification
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Fake advertisements & scam campaigns
 
-### `npm run build`
+These threats manipulate public opinion, spread misinformation, and damage platform trust.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Current detection systems focus only on pixel-level media forensics, ignoring behavioral interaction signals.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+💡 Our Solution
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We built an AI-powered detection platform that combines:
 
-### `npm run eject`
+Behavioral interaction analytics
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Graph network analysis
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Entropy & synchronization modeling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+AI content risk scoring
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+All wrapped inside a fully functional Instagram-style interface for real-world simulation.
 
-## Learn More
+🚀 Key Innovations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Detects deepfakes without needing raw video training datasets
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Uses interaction behavior instead of visual artifacts
 
-### Code Splitting
+Identifies coordinated campaigns in real time
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Works on ads, reels, and feed posts
 
-### Analyzing the Bundle Size
+Provides explainable AI signals
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🧠 Detection Methodology
 
-### Making a Progressive Web App
+Our engine analyzes 6 behavioral signals:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Spread Speed Analysis
+Detects abnormally rapid engagement spikes
 
-### Advanced Configuration
+Early Burst Detection
+Flags concentrated interactions immediately after posting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Synchronization Analysis
+Finds coordinated actions within 2-second windows
 
-### Deployment
+User Diversity Score
+Measures ratio of unique users vs interactions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Behavioral Entropy
+Evaluates randomness in engagement timing
 
-### `npm run build` fails to minify
+Graph Clustering
+Detects densely connected bot networks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📊 Confidence Scoring Model
+Score	Classification
+92%+	AI-Generated · High Confidence
+85%+	AI-Generated · High Confidence
+78%+	Medium Confidence
+55%+	Low Confidence
+<35%	Likely Human Content
+📱 Application Modules
+🏠 Home Feed
+
+Instagram-style posts
+
+AI analysis per post
+
+Engagement authenticity score
+
+🎬 Reels Detector
+
+Vertical reels viewer
+
+Deepfake probability scoring
+
+Amplification risk indicators
+
+📢 Ad Detector
+
+Fake advertisement detection
+
+Scam probability scoring
+
+AI-generated branding analysis
+
+📊 Analytics Dashboard
+
+Engagement spike graphs
+
+Bot cluster distribution
+
+Coordination heatmaps
+
+Hashtag spam tracking
+
+👤 Profile Risk View
+
+User authenticity score
+
+Content risk summary
+
+🛠️ Tech Stack
+Frontend
+
+React.js (JavaScript)
+
+React Router DOM
+
+Bootstrap 5
+
+Recharts
+
+CSS3
+
+Backend
+
+Flask (Python)
+
+Pandas & NumPy
+
+NetworkX
+
+SciPy
+
+AI Integration
+
+Google Gemini API (insight augmentation)
+
+🏗️ System Architecture
+User Interaction Data
+        ↓
+Feature Extraction Engine
+        ↓
+Behavioral Signal Analysis
+        ↓
+Graph Network Modeling
+        ↓
+Entropy & Synchronization Metrics
+        ↓
+AI Risk Scoring Engine
+        ↓
+Frontend Visualization Dashboard
+
+🎮 Demo Credentials
+Username: demo_user
+Password: any
+
+📁 Project Structure
+
+Frontend → Instagram UI Clone
+Backend → Detection Engine
+Analytics → Visualization & Graph Modeling
+
+📈 Impact & Use Cases
+
+Social media moderation
+
+Election misinformation detection
+
+Influencer authenticity verification
+
+Scam advertisement detection
+
+Brand safety monitoring
+
+🔮 Future Scope
+
+Real-time live stream detection
+
+Cross-platform monitoring
+
+Mobile app deployment
+
+Transformer-based video models
+
+Law-enforcement dashboards
