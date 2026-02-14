@@ -1,176 +1,196 @@
-.
+# 🎭 Instagram AI Deepfake Detector 🔍
+### Hackathon Submission Project
 
-🎭 Instagram AI Deepfake Detector 🔍
-Hackathon Submission Project
+A full-stack AI system that detects **deepfake videos, AI-generated media, and coordinated bot amplification campaigns** on social media using behavioral analytics and machine learning.
 
-A full-stack AI system that detects deepfake videos, AI-generated media, and coordinated bot amplification campaigns on social media using behavioral analytics and machine learning.
+---
 
-🧩 Problem Statement
+## 🧩 Problem Statement
 
 Social media platforms face a rapid rise in:
 
-AI-generated deepfake videos
-
-Synthetic influencer content
-
-Coordinated bot amplification
-
-Fake advertisements & scam campaigns
+- AI-generated deepfake videos  
+- Synthetic influencer content  
+- Coordinated bot amplification  
+- Fake advertisements & scam campaigns  
 
 These threats manipulate public opinion, spread misinformation, and damage platform trust.
 
-Current detection systems focus only on pixel-level media forensics, ignoring behavioral interaction signals.
+Current detection systems focus mainly on **pixel-level media forensics**, ignoring behavioral interaction signals.
 
-💡 Our Solution
+---
+
+## 💡 Our Solution
 
 We built an AI-powered detection platform that combines:
 
-Behavioral interaction analytics
+- Behavioral interaction analytics  
+- Graph network analysis  
+- Entropy & synchronization modeling  
+- AI content risk scoring  
 
-Graph network analysis
+All integrated into a **fully functional Instagram-style interface** for real-world simulation and analysis.
 
-Entropy & synchronization modeling
+---
 
-AI content risk scoring
+## 🚀 Key Innovations
 
-All wrapped inside a fully functional Instagram-style interface for real-world simulation.
+- Detects deepfakes without requiring raw video training datasets  
+- Uses behavioral signals instead of visual artifacts  
+- Identifies coordinated amplification campaigns  
+- Works across reels, posts, and advertisements  
+- Provides explainable AI detection signals  
 
-🚀 Key Innovations
+---
 
-Detects deepfakes without needing raw video training datasets
+## 🧠 Detection Methodology
 
-Uses interaction behavior instead of visual artifacts
+Our engine analyzes **6 behavioral signals**:
 
-Identifies coordinated campaigns in real time
+1. **Spread Speed Analysis**  
+   Detects abnormally rapid engagement spikes  
 
-Works on ads, reels, and feed posts
+2. **Early Burst Detection**  
+   Flags concentrated interactions immediately after posting  
 
-Provides explainable AI signals
+3. **Synchronization Analysis**  
+   Finds coordinated actions within 2-second windows  
 
-🧠 Detection Methodology
+4. **User Diversity Score**  
+   Measures ratio of unique users vs interactions  
 
-Our engine analyzes 6 behavioral signals:
+5. **Behavioral Entropy**  
+   Evaluates randomness in engagement timing  
 
-Spread Speed Analysis
-Detects abnormally rapid engagement spikes
+6. **Graph Clustering**  
+   Detects densely connected bot networks  
 
-Early Burst Detection
-Flags concentrated interactions immediately after posting
+---
 
-Synchronization Analysis
-Finds coordinated actions within 2-second windows
+## 📊 Confidence Scoring Model
 
-User Diversity Score
-Measures ratio of unique users vs interactions
+| Score Range | Classification |
+|------------|----------------|
+| 92%+ | AI-Generated · High Confidence |
+| 85%+ | AI-Generated · High Confidence |
+| 78%+ | Medium Confidence |
+| 55%+ | Low Confidence |
+| <35% | Likely Human Content |
 
-Behavioral Entropy
-Evaluates randomness in engagement timing
+---
 
-Graph Clustering
-Detects densely connected bot networks
+## 📱 Application Modules
 
-📊 Confidence Scoring Model
-Score	Classification
-92%+	AI-Generated · High Confidence
-85%+	AI-Generated · High Confidence
-78%+	Medium Confidence
-55%+	Low Confidence
-<35%	Likely Human Content
-📱 Application Modules
-🏠 Home Feed
+### 🏠 Home Feed
+- Instagram-style posts  
+- AI authenticity analysis  
+- Engagement trust score  
 
-Instagram-style posts
+### 🎬 Reels Detector
+- Vertical reels viewer  
+- Deepfake probability scoring  
+- Amplification risk indicators  
 
-AI analysis per post
+### 📢 Ad Detector
+- Fake advertisement detection  
+- Scam probability scoring  
+- AI branding analysis  
 
-Engagement authenticity score
+### 📊 Analytics Dashboard
+- Engagement spike graphs  
+- Bot cluster distribution  
+- Coordination heatmaps  
+- Hashtag spam tracking  
 
-🎬 Reels Detector
+### 👤 Profile Risk View
+- User authenticity score  
+- Content risk summary  
 
-Vertical reels viewer
+---
 
-Deepfake probability scoring
+## 🛠️ Tech Stack
 
-Amplification risk indicators
+### Frontend
+- React.js (JavaScript)  
+- React Router DOM  
+- Bootstrap 5  
+- Recharts  
+- CSS3  
 
-📢 Ad Detector
+### Backend
+- Flask (Python)  
+- Pandas  
+- NumPy  
+- NetworkX  
+- SciPy  
 
-Fake advertisement detection
+### AI Integration
+- Google Gemini API (Insight augmentation)
 
-Scam probability scoring
+---
 
-AI-generated branding analysis
+## 🏗️ System Architecture
 
-📊 Analytics Dashboard
-
-Engagement spike graphs
-
-Bot cluster distribution
-
-Coordination heatmaps
-
-Hashtag spam tracking
-
-👤 Profile Risk View
-
-User authenticity score
-
-Content risk summary
-
-🛠️ Tech Stack
-Frontend
-
-React.js (JavaScript)
-
-React Router DOM
-
-Bootstrap 5
-
-Recharts
-
-CSS3
-
-Backend
-
-Flask (Python)
-
-Pandas & NumPy
-
-NetworkX
-
-SciPy
-
-AI Integration
-
-Google Gemini API (insight augmentation)
-
-🏗️ System Architecture
 User Interaction Data
-        ↓
+↓
 Feature Extraction Engine
-        ↓
+↓
 Behavioral Signal Analysis
-        ↓
+↓
 Graph Network Modeling
-        ↓
+↓
 Entropy & Synchronization Metrics
-        ↓
+↓
 AI Risk Scoring Engine
-        ↓
+↓
 Frontend Visualization Dashboard
 
-🎮 Demo Credentials
+
+---
+
+## 🚀 Installation & Setup
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/yourusername/instagram-ai-deepfake-detector.git
+cd instagram-ai-deepfake-detector
+2️⃣ Frontend Setup
+cd my-app
+npm install
+npm install react-router-dom bootstrap react-icons recharts
+npm start
+Frontend runs on:
+http://localhost:3000
+
+3️⃣ Backend Setup
+cd backend
+
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+python app.py
+Backend runs on:
+http://localhost:5000/api
+
+🔐 Demo Credentials
 Username: demo_user
 Password: any
-
 📁 Project Structure
-
-Frontend → Instagram UI Clone
-Backend → Detection Engine
-Analytics → Visualization & Graph Modeling
-
+instagram-ai-deepfake-detector/
+│
+├── my-app/        → React Frontend
+├── backend/       → Flask Detection Engine
+├── analytics/     → Graph & Signal Analysis
+└── README.md
 📈 Impact & Use Cases
-
 Social media moderation
 
 Election misinformation detection
@@ -181,14 +201,14 @@ Scam advertisement detection
 
 Brand safety monitoring
 
-🔮 Future Scope
-
+🔮 Future Enhancements
 Real-time live stream detection
 
 Cross-platform monitoring
 
 Mobile app deployment
 
-Transformer-based video models
+Advanced video transformer models
 
 Law-enforcement dashboards
+
